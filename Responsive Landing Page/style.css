@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth;}
+body{background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;line-height:1.8;}
+
+/* Navbar */
+.navbar{position:fixed;top:0;width:100%;padding:20px 80px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(10px);background:rgba(15,23,42,0.6);z-index:1000;transition:0.3s;}
+.navbar.scrolled{background:rgba(15,23,42,0.95);}
+.logo{font-size:26px;font-weight:700;}
+.logo span{color:#38bdf8;}
+.navbar a{color:#fff;text-decoration:none;margin:0 18px;font-size:16px;transition:0.3s;}
+.navbar a:hover{color:#38bdf8;}
+.menu-icon{display:none;font-size:26px;cursor:pointer;}
+
+/* All Sections - Dooram dooram */
+section{padding:120px 80px; min-height:80vh;} /* Idi key - height ekkuva */
+.hero{text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center;}
+.hero h1{font-size:55px;margin-bottom:15px;}
+.hero h1 span{color:#38bdf8;}
+.hero p{font-size:20px;margin-bottom:25px;color:#cbd5e1;}
+.btn{background:#38bdf8;color:#0f172a;border:none;padding:16px 35px;border-radius:12px;font-size:18px;font-weight:600;cursor:pointer;transition:0.3s;}
+.btn:hover{transform:scale(1.08);box-shadow:0 0 25px #38bdf8;}
+
+/* Features Grid */
+.features h2, .about h2, .projects h2, .contact h2{font-size:36px;text-align:center;margin-bottom:50px;}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+.card{background:rgba(255,255,255,0.05);padding:40px;border-radius:18px;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1);transition:0.4s;}
+.card:hover{transform:translateY(-12px);border-color:#38bdf8;}
+
+/* Projects */
+.project-list{display:grid;grid-template-columns:1fr 1fr;gap:25px;}
+.project{background:rgba(255,255,255,0.05);padding:30px;border-left:4px solid #38bdf8;border-radius:10px;}
+
+/* Contact */
+.contact{text-align:center;}
+.contact p{font-size:18px;margin:10px;}
+
+/* Footer */
+footer{padding:30px;text-align:center;background:#0f172a;color:#94a3b8;font-size:16px;}
+
+/* Animation */
+.fade-in{opacity:0;transform:translateY(30px);animation:fadeIn 1.2s forwards;}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0);}}
+
+/* Responsive */
+@media(max-width:900px){
+  section{padding:100px 40px;}
+  .grid{grid-template-columns:1fr 1fr;}
+  .project-list{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  section{padding:80px 20px;}
+  .navbar{padding:15px 20px;}
+  .menu-icon{display:block;}
+  #nav-menu{display:none;flex-direction:column;width:100%;position:absolute;top:70px;left:0;background:rgba(15,23,42,0.95);padding:20px;}
+  #nav-menu.active{display:flex;}
+  .grid{grid-template-columns:1fr;}
+  .hero h1{font-size:35px;}
+}
